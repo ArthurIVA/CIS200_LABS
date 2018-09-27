@@ -28,12 +28,15 @@ int main()
 	std::cout << "The number of even integers in this array is " << howManyEven(arrayIntValues) << std::endl << std::endl;
 
 	std::cout << "Now it's your turn!" << std::endl;
-	std::cout << "Please enter your own positive integers into the array," << std::endl;
-	std::cout << "Press ENTER / RETURN after each integer." << std::endl;
 
 	//Begin menu for user input
 	do 
 	{
+		userChoice = ' ';
+
+		std::cout << "Please enter your own positive integers into the array," << std::endl;
+		std::cout << "Press ENTER / RETURN after each integer." << std::endl;
+
 		//Outer loop iterates through rows with formatting.
 		for (int i = 0; i < MAX_ROWS; i++)
 		{
@@ -44,6 +47,11 @@ int main()
 				{
 					userIn = 0;
 					std::cin >> userIn;
+					
+					if (userIn <= 0)
+					{
+						std::cout << "That was negative... try again you silly goose!" << std::endl;
+					}
 				} while (userIn <= 0);
 				
 				arrayIntValues[i][j] = userIn;
@@ -57,7 +65,7 @@ int main()
 		//Choose to continue or not
 		do
 		{
-			std::cout << "Would you like to insert new positive integers? (y)es/(n)o?" << std::endl;
+			std::cout << "Would you like to enter new integers? (y)es/(n)o?" << std::endl;
 			std::cin >> userChoice;
 			userChoice = std::tolower(userChoice);
 		} while (!(userChoice == 'y' || userChoice == 'n'));
