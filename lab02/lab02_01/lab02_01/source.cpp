@@ -30,11 +30,10 @@ int main()
 	std::cout << "Now it's your turn!" << std::endl;
 	std::cout << "Please enter your own positive integers into the array," << std::endl;
 	std::cout << "Press ENTER / RETURN after each integer." << std::endl;
+
 	//Begin menu for user input
 	do 
 	{
-		userChoice = ' ';
-
 		//Outer loop iterates through rows with formatting.
 		for (int i = 0; i < MAX_ROWS; i++)
 		{
@@ -55,8 +54,14 @@ int main()
 		printArray(arrayIntValues);
 		std::cout << "The number of even integers in this array is " << howManyEven(arrayIntValues) << std::endl << std::endl;
 
-		std::cout << "Would you like to insert new positive integers? (y)es/(n)o?" << std::endl;
-		std::cin >> userChoice;
+		//Choose to continue or not
+		do
+		{
+			std::cout << "Would you like to insert new positive integers? (y)es/(n)o?" << std::endl;
+			std::cin >> userChoice;
+			userChoice = std::tolower(userChoice);
+		} while (!(userChoice == 'y' || userChoice == 'n'));
+
 	} while (userChoice != 'n');
 	
 
@@ -66,8 +71,8 @@ int main()
 
 
 //Description: Identifies even integers within a 2 dimensional array and counts how many exist.
-//Pre-Condition: 
-//Post-Condition: 
+//Pre-Condition: Array that contains integers that can be evaluated as even or odd.
+//Post-Condition: Gives nunber of even integers in the given.
 int howManyEven(int arrayIntValues[][MAX_COULMNS])
 {
 	int numEvens = 0;
@@ -88,8 +93,8 @@ int howManyEven(int arrayIntValues[][MAX_COULMNS])
 }
 
 //Description: Iterates through two dimensional array and prints it in a formatted state.
-//Pre-Condition: 
-//Post-Condition: 
+//Pre-Condition: Have filled array that can be printed.
+//Post-Condition: Formatted array printed for the user.
 void printArray(int arrayIntValues[][MAX_COULMNS])
 {
 	std::cout << std::endl;
