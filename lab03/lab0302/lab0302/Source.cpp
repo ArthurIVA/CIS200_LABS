@@ -1,6 +1,6 @@
 //Program Name: Square Root Calculator
 //Programmer Name: Arthur Aigeltinger IV
-//Description: Use series approinputimation to calculate the square root.
+//Description: Use series approximation to calculate the square root.
 //Date Created: 10/03/18
 
 #include "assert.h"
@@ -32,7 +32,6 @@ int main()
 	if (input.is_open())
 	{
 		readIntFile(input, intArray, length);
-		std::cout << "WOOP" << std::endl;
 		printFileValues(intArray, length);
 	}
 	else
@@ -64,7 +63,7 @@ void readIntFile(std::ifstream &input, int intArray[], int &length)
 //Post-Condition: User will be satisfied.
 void printFileValues(int intArray[], int & length)
 {
-	assert(length > 0);
+	assert(intArray[0] != -858993460);
 
 	std::cout << "Final length of array is " << length << std::endl;
 
