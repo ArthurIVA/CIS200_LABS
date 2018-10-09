@@ -39,9 +39,9 @@ void myString::setLength(int input)
 	length = input;
 }
 ///GET COMMANDS
-myString myString::getString()
+std::string myString::getString()
 {
-	return myString();
+	return charArray;
 }
 int myString::getErrorCode()
 {
@@ -145,12 +145,15 @@ myString myString::partString(int startPos, int length)
 
 	return holderString;
 }
-//IN PROGRESS -------------------------------------------------------------------------------------------------------
+
 myString myString::replPartString(myString input, int startPos)
 {
-	if (startPos > MAX_SIZE)
+	//Declare Holders
+	myString holderString;
+
+	if (startPos > this->length)
 	{
-		setErrorCode(-2);
+		setErrorCode(-3);
 	}
 	else if ((startPos + input.size()) > MAX_SIZE)
 	{
@@ -158,17 +161,55 @@ myString myString::replPartString(myString input, int startPos)
 	}
 	else
 	{
+		//Fill Holder myString
+		for (int i = 0; i < input.getLength(); i++)
+		{
+			holderString.charArray[i] = input.charArray[i];
+		}
+		int j = 0;
 		for (int i = (startPos - 1); i < (length + startPos - 1); i++)
 		{
-			//holderString.charArray[j] = this->charArray[i];
-			//j++;
+			this->charArray[i] = holderString.charArray[j];
+			j++;
 		}
-
+		this->setLength(startPos + input.size());
 	}
 
 	return myString();
 }
 
+myString myString::replWholeString(myString input)
+{
+	if (input.size() > MAX_SIZE)
+	{
+		setErrorCode(-1);
+	}
+	else
+	{
+		for (int i = 0; i < MAX_SIZE; i++)
+		{
+			this->charArray[i] = input.charArray[i];
+		}
+		this->setLength(input.size());
+	}
+
+	return myString();
+}
+
+bool myString::compareString(myString input)
+{
+	int i = 0;
+	do
+	{
+		if (this->charArray[i] != input.charArray[i])
+		{
+			return false;
+		}
+		i++;
+	} while (i < MAX_SIZE);
+
+	return true;
+}
 
 void myString::initString()
 {
@@ -203,6 +244,20 @@ bool myString::numericString()
 	{
 		return true;
 	}
+}
+
+bool myString::alphabeticString()
+{
+	int i = 0;
+	while (this->charArray[i] != '\0')
+	{
+		if (!(isalpha(this->charArray[i])))
+		{
+			return false;
+		}
+		i++;
+	}
+	return true;
 }
 
 myString::~myString()

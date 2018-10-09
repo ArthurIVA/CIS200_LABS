@@ -9,6 +9,7 @@
 //ERROR CODE LOOKUP
 // -1 = Attempted to fill string with more than 25 characters.
 // -2 = Attempted to access index above 25
+// -3 = Attempted to fill with whitespace
 
 class myString
 {
@@ -24,8 +25,6 @@ private:
 	//Define Container for myString
 	char charArray[25];
 
-
-
 public:
 	myString();
 
@@ -35,22 +34,26 @@ public:
 	void setLength(int);
 
 	//Get Functions
-	myString getString();
+	std::string getString();
 	int getErrorCode();
 	int getLength();
 
-
 	int size();
+
 	void addStart(myString);
 	void addEnd(myString);
 
 	myString partString(int, int);
 	myString replPartString(myString, int);
+	myString replWholeString(myString);
+
+	bool compareString(myString);
 
 	void initString();
 	void printStringScreen();
 
 	bool numericString();
+	bool alphabeticString();
 
 	~myString();
 };
