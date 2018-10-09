@@ -8,6 +8,7 @@
 
 //ERROR CODE LOOKUP
 // -1 = Attempted to fill string with more than 25 characters.
+// -2 = Attempted to access index above 25
 
 class myString
 {
@@ -42,6 +43,9 @@ public:
 	int size();
 	void addStart(myString);
 	void addEnd(myString);
+
+	myString partString(int, int);
+	myString replPartString(myString, int);
 
 	void initString();
 	void printStringScreen();

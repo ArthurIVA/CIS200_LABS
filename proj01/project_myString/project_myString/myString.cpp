@@ -45,7 +45,7 @@ myString myString::getString()
 }
 int myString::getErrorCode()
 {
-	return 0;
+	return errorCode;
 }
 int myString::getLength()
 {
@@ -96,7 +96,6 @@ void myString::addStart(myString input)
 void myString::addEnd(myString input)
 {
 	//Declare Holder Variables
-	myString holderString;
 	int tempLength = this->size();
 	int tempLength2 = input.size();
 
@@ -106,18 +105,71 @@ void myString::addEnd(myString input)
 	}
 	else
 	{
-		//Fill Holder myString
-		for (int i = 0; i < length; i++)
-		{
-			holderString.charArray[i] = input.charArray[i];
-		}
-		for (int i = size(); i < (input.size() + tempLength); i++)
-		{
-			charArray[i] = holderString.charArray[i - input.size()];
-		}
+		//Append character arrays
+		int i = tempLength;
+		int j = 0;
+		do {
+			this->charArray[i] = input.charArray[j];
+			i++;
+			j++;
+		} while (i < (tempLength + tempLength2));
+		//Update length
 		this->setLength(tempLength + tempLength2);
 	}
 }
+
+myString myString::partString(int startPos, int length)
+{
+	//Declare Holder
+	myString holderString;
+
+	if (startPos > MAX_SIZE)
+	{
+		setErrorCode(-2);
+	}
+	else if ((startPos + length) > MAX_SIZE)
+	{
+		setErrorCode(-2);
+	}
+	else
+	{
+		int j = 0;
+		//Fill Holder myString
+		for (int i = (startPos - 1); i < (length + startPos - 1); i++)
+		{
+			holderString.charArray[j] = this->charArray[i];
+			j++;
+		}
+		holderString.setLength(this->getLength());
+	}
+
+	return holderString;
+}
+//IN PROGRESS -------------------------------------------------------------------------------------------------------
+myString myString::replPartString(myString input, int startPos)
+{
+	if (startPos > MAX_SIZE)
+	{
+		setErrorCode(-2);
+	}
+	else if ((startPos + input.size()) > MAX_SIZE)
+	{
+		setErrorCode(-1);
+	}
+	else
+	{
+		for (int i = (startPos - 1); i < (length + startPos - 1); i++)
+		{
+			//holderString.charArray[j] = this->charArray[i];
+			//j++;
+		}
+
+	}
+
+	return myString();
+}
+
+
 void myString::initString()
 {
 	//Revert size to empty
@@ -136,12 +188,21 @@ void myString::printStringScreen()
 		std::cout << charArray[i];
 	}
 }
-//IN PROGRESS--------------------------------------------------------------------------------------------
+
 bool myString::numericString()
 {
+	//Cast character array into double.
 	double holder = atof(charArray);
-
-	return true;
+	
+	//This solution works for every possible input except zero
+	if (holder == 0) //Input was not a real number, or zero
+	{
+		return false;
+	}
+	else //Input was a real number
+	{
+		return true;
+	}
 }
 
 myString::~myString()

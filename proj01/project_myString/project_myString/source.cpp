@@ -19,14 +19,24 @@ int main()
 	std::cin >> holderString;
 	testString.setString(holderString);
 
-	std::cout << "Fill String 2: ";
-	std::cin >> holderString;
-	testString2.setString(holderString);
+	//std::cout << "Fill String 2: ";
+	//std::cin >> holderString;
+	//testString2.setString(holderString);
 
-	testString.addEnd(testString2);
-	testString.numericString();
+	testString2.addStart((testString.partString(4,4)));
 
-	testString.printStringScreen();
+	//testString.addEnd(testString2);
+	/*
+	if (testString.numericString())
+	{
+		std::cout << "NUMERIC";
+	}
+	else
+	{
+		std::cout << "NOT NUMERIC";
+	}
+	*/
+	testString2.printStringScreen();
 	std::cout << std::endl;
 
 	system("pause");
