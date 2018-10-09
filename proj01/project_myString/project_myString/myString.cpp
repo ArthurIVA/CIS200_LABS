@@ -1,6 +1,5 @@
 #include "myString.h"
 
-
 //Default Constructor
 myString::myString()
 {
@@ -10,6 +9,10 @@ myString::myString()
 
 //PUBLIC METHODS
 ///SET COMMANDS
+
+//Description: Sets character array in myString equal to string input
+//Pre-Condition: string <= 25 character w/o whitespace
+//Post-Condition: Filled character array in myString
 void myString::setString(std::string input)
 {
 	if (input.size() > MAX_SIZE)
@@ -29,36 +32,59 @@ void myString::setString(std::string input)
 	}
 }
 
+//Description: Access and update private variable errorCode. See list in Header File
+//Pre-Condition: An error code needs updating
+//Post-Condition: An error code gets updated
 void myString::setErrorCode(int input)
 {
 	errorCode = input;
 }
 
+//Description: Access and update private variable length
+//Pre-Condition: Need to keep track of length of character array/myString as it is changed
+//Post-Condition: length that accuratly matched character array in myString
 void myString::setLength(int input)
 {
 	length = input;
 }
+
 ///GET COMMANDS
+
+//Description: Retrieve character array and present it in a way that can be shown to the user or used in output log.
+//Pre-Condition: NEED MYSTRING
+//Post-Condition: YOU GOT MYSTRING
 std::string myString::getString()
 {
 	return charArray;
 }
+
+//Description: Retrieve error code for use in output log	
+//Pre-Condition: Error code needed for output.
+//Post-Condition: YOU GOT IT
 int myString::getErrorCode()
 {
 	return errorCode;
 }
+
+//Description:  Retrieve private variable length
+//Pre-Condition: need
+//Post-Condition: got
 int myString::getLength()
 {
 	return length;
 }
 
-
+//Description: Forward the current size of character array
+//Pre-Condition: need size
+//Post-Condition: YOU GOT IT BOSS
 int myString::size()
 {
 	return getLength();
 }
 
-
+//Description: Appends secondary input to the beginning of original myString
+//Pre-Condition: An original myString and an addition
+//Post-Condition: addition at the beginning of myString
 void myString::addStart(myString input)
 {
 	//Declare Holder Variables
@@ -93,6 +119,10 @@ void myString::addStart(myString input)
 		this->setLength(tempLength + tempLength2);
 	}
 }
+
+//Description: Appends secondary string to the end of a primary string
+//Pre-Condition: An original myString an extra myString
+//Post-Condition: Lo and behold they are mended together...
 void myString::addEnd(myString input)
 {
 	//Declare Holder Variables
@@ -118,6 +148,9 @@ void myString::addEnd(myString input)
 	}
 }
 
+//Description: Returns portion of myString from given starting position and length
+//Pre-Condition: A string, A spot, and A distance.
+//Post-Condition: "He's going the distance"
 myString myString::partString(int startPos, int length)
 {
 	//Declare Holder
@@ -146,6 +179,9 @@ myString myString::partString(int startPos, int length)
 	return holderString;
 }
 
+//Description: Replaces portion of myString with secondary myString beginning at a given position
+//Pre-Condition: myString to insert, and a position.
+//Post-Condition: lime in the coconut.
 myString myString::replPartString(myString input, int startPos)
 {
 	//Declare Holders
@@ -178,6 +214,9 @@ myString myString::replPartString(myString input, int startPos)
 	return myString();
 }
 
+//Description: Replaces current myString with entirely new myString
+//Pre-Condition: bloodlust to kill current myString.
+//Post-Condition: Zero evidence it ever happened outside of your mind.
 myString myString::replWholeString(myString input)
 {
 	if (input.size() > MAX_SIZE)
@@ -196,6 +235,9 @@ myString myString::replWholeString(myString input)
 	return myString();
 }
 
+//Description: Check to see if two given myStrings are identical.
+//Pre-Condition: 2 myStrings
+//Post-Condition: true or false
 bool myString::compareString(myString input)
 {
 	int i = 0;
@@ -211,6 +253,9 @@ bool myString::compareString(myString input)
 	return true;
 }
 
+//Description: Initializes myString will null characters
+//Pre-Condition: desire to erase
+//Post-Condition: ... theres nothing here ...
 void myString::initString()
 {
 	//Revert size to empty
@@ -222,6 +267,10 @@ void myString::initString()
 		charArray[i] = '\0';
 	}
 }
+
+//Description: Does what it says
+//Pre-Condition: Does it really matter?
+//Post-Condition: Does anything really matter?
 void myString::printStringScreen()
 {
 	for (int i = 0; i < size(); i++)
@@ -230,6 +279,9 @@ void myString::printStringScreen()
 	}
 }
 
+//Description: Casts character array into double.
+//Pre-Condition: If character array contains any non-real int chars, it evaluates to zero
+//Post-Condition: this is a flawed approach as it means you cant perform this function on a real zero. Didn't have time to build a regular expression from scratch.
 bool myString::numericString()
 {
 	//Cast character array into double.
@@ -246,6 +298,9 @@ bool myString::numericString()
 	}
 }
 
+//Description: Iterate and see if char array contains any non alpha chars
+//Pre-Condition: a char array
+//Post-Condition: a yes or no answer
 bool myString::alphabeticString()
 {
 	int i = 0;
@@ -260,6 +315,7 @@ bool myString::alphabeticString()
 	return true;
 }
 
+//Default Detructor
 myString::~myString()
 {
 }
