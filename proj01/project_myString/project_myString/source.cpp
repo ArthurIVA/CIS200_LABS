@@ -73,7 +73,7 @@ int main()
 			//Process
 			//Print Result
 			std::cout << "Result       : ";
-			std::cout << testString.size() << std::endl;
+			std::cout << testString.size();
 
 			result = std::to_string(testString.size());
 			error = testString.getErrorCode();
@@ -411,7 +411,7 @@ int main()
 		} 
 	while (userChoice != 0);
 
-	system("pause");
+	//system("pause");
 	return 0;
 }
 

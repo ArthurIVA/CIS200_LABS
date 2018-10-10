@@ -1,0 +1,28 @@
+Function Tested : partString(startPos, length)
+Initial String  : mystring
+Parameter 1     : 26
+Parameter 2     : 5
+Result          : 
+Error Code      : -2  *Attempted to access index above 25*
+
+Function Tested : replPartString(myString, startPos)
+Initial String  : mystring
+Parameter 1     : test
+Parameter 2     : 26
+Result          : mystring
+Error Code      : -3  *Attempted to fill with whitespace*
+
+Function Tested : replWholeString(myString)
+Initial String  : mystring
+Parameter 1     : abcdefghijklmnopqrstuvwxyz
+Parameter 2     : NULL
+Result          : 
+Error Code      : -3  *Attempted to fill with whitespace*
+
+Function Tested : compareString(myString)
+Initial String  : mystring
+Parameter 1     : mystring
+Parameter 2     : NULL
+Result          : 
+Error Code      : -3  *Attempted to fill with whitespace*
+

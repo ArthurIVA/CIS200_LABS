@@ -1,0 +1,98 @@
+Function Tested : partString(startPos, length)
+Initial String  : mystring
+Parameter 1     : 1
+Parameter 2     : 5
+Result          : mystr
+Error Code      : 0  - No Errors Occured
+
+Function Tested : replPartString(myString, startPos)
+Initial String  : mystring
+Parameter 1     : Test
+Parameter 2     : 3
+Result          : myTest
+Error Code      : 0  - No Errors Occured
+
+Function Tested : replWholeString(myString)
+Initial String  : mystring
+Parameter 1     : testing
+Parameter 2     : NULL
+Result          : testing
+Error Code      : 0  - No Errors Occured
+
+Function Tested : compareString(myString)
+Initial String  : mystring
+Parameter 1     : test
+Parameter 2     : NULL
+Result          :  
+Error Code      : 0  - No Errors Occured
+
+Function Tested : initString()
+Initial String  : testing
+Parameter 1     : NULL
+Parameter 2     : NULL
+Result          : 
+Error Code      : 0  - No Errors Occured
+
+Function Tested : setString(string)
+Initial String  : mystr
+Parameter 1     : mystr
+Parameter 2     : NULL
+Result          : mystr
+Error Code      : 0  - No Errors Occured
+
+Function Tested : getString()
+Initial String  : mystr
+Parameter 1     : NULL
+Parameter 2     : NULL
+Result          : mystr
+Error Code      : 0  - No Errors Occured
+
+Function Tested : printStringScreen()
+Initial String  : mystr
+Parameter 1     : NULL
+Parameter 2     : NULL
+Result          : mystr
+Error Code      : 0  - No Errors Occured
+
+Function Tested : numericString()
+Initial String  : 6.502
+Parameter 1     : NULL
+Parameter 2     : NULL
+Result          : Is Real Number
+Error Code      : 0  - No Errors Occured
+
+Function Tested : alphabeticString()
+Initial String  : abc
+Parameter 1     : NULL
+Parameter 2     : NULL
+Result          : Is Alphabetic
+Error Code      : 0  - No Errors Occured
+
+Function Tested : size()
+Initial String  : abcdefghijklmnopqrstuvwxyz
+Parameter 1     : NULL
+Parameter 2     : NULL
+Result          : 0
+Error Code      : -1  *Attempted to fill string with more than 25 character*
+
+Function Tested : addStart(myString)
+Initial String  : a
+Parameter 1     : bcdefghijklmnopqrstuvwxyz
+Parameter 2     : NULL
+Result          : a
+Error Code      : -1  *Attempted to fill string with more than 25 character*
+
+Function Tested : addEnd(myString)
+Initial String  : a
+Parameter 1     : bcdefghijklmnopqrstuvwxyz
+Parameter 2     : NULL
+Result          : a
+Error Code      : -1  *Attempted to fill string with more than 25 character*
+
+Function Tested : partString(startPos, length)
+Initial String  : mystring
+Parameter 1     : -1
+Parameter 2     : 5
+Result          : 
+Error Code      : -1  *Attempted to fill string with more than 25 character*
+
