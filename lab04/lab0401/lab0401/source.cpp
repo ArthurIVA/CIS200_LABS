@@ -25,6 +25,7 @@ int main()
 
 	//ADDITIONAL TEST CASES
 
+	system("pause");
 
 	return 0;
 }
