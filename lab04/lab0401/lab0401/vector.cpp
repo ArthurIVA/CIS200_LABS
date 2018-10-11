@@ -13,9 +13,12 @@ Vector::Vector()
 //Size Constructor
 Vector::Vector(int s)
 {
+	size = s;
+
 	if (size < 0)
 	{
-		std::cout << "ERROR: SIZE CANNOT BE <= 0" << std::endl;
+		std::cout << "ERROR: SIZE CANNOT BE < 0" << std::endl;
+		size = 0;
 	}
 	else
 	{
@@ -41,7 +44,6 @@ Vector::Vector(const Vector & other)
 	{
 		entries[i] = other.entries[i];
 	}
-
 }
 
 //DESTRUCTOR
@@ -65,11 +67,6 @@ void Vector::print()
 
 void Vector::set(int val, int pos)
 {
-//if 0 <=pos<size
-//	stores val at pos in entries
-//otherwise
-//	error message
-
 	if (pos < 0 || pos >= size)
 	{
 		std::cout << "ERROR: POSITION OR SIZE OUT OF BOUNDS" << std::endl;
