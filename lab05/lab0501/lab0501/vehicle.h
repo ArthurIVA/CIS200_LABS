@@ -22,5 +22,4 @@ private:
 	int age;		//Age of the vehicle
 	float price;	//Price of the vehicle
 };
-
-#endif
+#endif VEHICLE_H
