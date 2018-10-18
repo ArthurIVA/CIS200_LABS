@@ -121,7 +121,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="car.cpp" />
-    <ClCompile Include="source.cpp" />
+    <ClCompile Include="carIndividual.cpp" />
+    <ClCompile Include="truckIndividual.cpp" />
+    <ClCompile Include="vehicleCar.cpp" />
+    <ClCompile Include="vehicleCarTruckCombined.cpp" />
+    <ClCompile Include="vehicleIndividual.cpp" />
+    <ClCompile Include="truck.cpp" />
     <ClCompile Include="vehicle.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

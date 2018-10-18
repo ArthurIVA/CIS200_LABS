@@ -10,12 +10,26 @@ vehicle::vehicle()
 //Setter Commands
 void vehicle::setAge(int input)
 {
-	age = input;
+	if (input >= 0)
+	{
+		age = input;
+	}
+	else
+	{
+		std::cout << "Invalid Age" << std::endl;
+	}
 }
 
 void vehicle::setPrice(float input)
 {
-	price = input;
+	if (input >= 0)
+	{
+		price = input;
+	}
+	else
+	{
+		std::cout << "Invalid Price" << std::endl;
+	}
 }
 
 //Getter Commands

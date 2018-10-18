@@ -1,5 +1,5 @@
 #pragma once
-
+#include <iostream>
 #include "vehicle.h"
 
 #ifndef CAR_H
@@ -15,7 +15,7 @@ public:
 	bool getRaceCarStatus();
 
 	~car();		//Default Destructor
-private:
+protected:
 
 	bool RaceCarStatus;
 };

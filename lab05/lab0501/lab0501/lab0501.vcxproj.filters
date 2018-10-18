@@ -29,10 +29,25 @@
     <ClCompile Include="vehicle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source.cpp">
+    <ClCompile Include="car.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="car.cpp">
+    <ClCompile Include="truck.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vehicleIndividual.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="carIndividual.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vehicleCar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="truckIndividual.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vehicleCarTruckCombined.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
