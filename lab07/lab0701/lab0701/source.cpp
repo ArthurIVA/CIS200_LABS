@@ -1,6 +1,6 @@
-//Program Name: 
+//Program Name: Client Data - RANDOM ACCESS
 //Programmer Name: Arthur Aigeltinger IV
-//Description: 
+//Description: A toe dipped in the water of random file access that is still a little over my head but I'm glad I made it this far. Thanks for coming to my TedTalk...
 //Date Created: 10/29/18
 
 #include <fstream>
@@ -32,7 +32,7 @@ int main()
 	createBlankFile(blankClient);
 	writeToFile(client);
 	userRead(client);
-	//printAllRecords(client);
+	printAllRecords(client);
 
 	system("pause");
 	return 0;
@@ -72,6 +72,7 @@ void writeToFile(clientData client)
 	do //Filling Client Data until accountNumber = 0
 	{
 		//Initial Prompt
+		std::cout << std::endl;
 		std::cout << "Please Enter an Account Number (1-100)" << std::endl;
 		std::cout << "Entering 0 Will Exit User Input" << std::endl;
 		std::cout << "Account Number: ";
@@ -116,11 +117,12 @@ void userRead(clientData client)
 	//Announce Function to User
 	std::cout << std::endl;
 	std::cout << "Request Specific User Data" << std::endl;
-	std::cout << std::endl;
+	//std::cout << std::endl;
 
 	do
 	{
-
+		std::cout << std::endl;
+		std::cout << "Enter 0 To Exit" << std::endl;
 		std::cout << "Enter Account Number: ";
 		std::cin >> userIn;
 
@@ -132,9 +134,7 @@ void userRead(clientData client)
 		}
 		else if (userIn >= 1 && userIn <= 100)
 		{
-			client.accountNumber = userIn;
-
-			inCredit.seekg((client.accountNumber - 1) * sizeof(clientData));
+			inCredit.seekg((userIn - 1) * sizeof(clientData));
 			inCredit.read(reinterpret_cast<char *>(&client), sizeof(clientData));
 
 				if (client.accountNumber == userIn)
@@ -146,7 +146,7 @@ void userRead(clientData client)
 					std::cout << client.firstName << std::endl;
 					std::cout << "Last Name:      ";
 					std::cout << client.lastName << std::endl;
-					std::cout << "Balance:        ";
+					std::cout << "Balance:       $";
 					std::cout << client.balance << std::endl;
 				}
 				else //Checking for Invalid Within Range
@@ -158,6 +158,7 @@ void userRead(clientData client)
 		else //Checking for Invalid Outside Range
 		{
 			std::cout << "ACCOUNT NUMBER OUT OF RANGE" << std::endl;
+			client.accountNumber = -1;
 		}
 	} while (client.accountNumber != 0);  //Checking to repeat even though case [0] is handled with initial "if"
 }
@@ -188,8 +189,8 @@ void printAllRecords(clientData client)
 			std::cout << client.firstName << std::endl;
 			std::cout << "Last Name:      ";
 			std::cout << client.lastName << std::endl;
-			std::cout << "Balance:        ";
-			std::cout << client.balance << std::endl;
+			std::cout << "Balance:       $";
+			std::cout << client.balance << std::endl << std::endl;
 		}
 
 		inCredit.read(reinterpret_cast<char *>(&client), sizeof(clientData));
