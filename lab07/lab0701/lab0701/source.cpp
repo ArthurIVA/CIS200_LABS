@@ -90,8 +90,11 @@ void writeToFile(clientData client)
 			std::cin >> client.firstName;
 			std::cout << "Last Name: ";
 			std::cin >> client.lastName;
-			std::cout << "Balance: ";
-			std::cin >> client.balance;
+			do
+			{
+				std::cout << "Balance: ";
+				std::cin >> client.balance;
+			} while (client.balance < 0);
 
 			outCredit1.seekp((client.accountNumber - 1) * sizeof(clientData));
 			outCredit1.write(reinterpret_cast<const char*>(&client), sizeof(clientData));
