@@ -116,13 +116,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Car.cpp" />
-    <ClCompile Include="carMain.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Truck.cpp" />
-    <ClCompile Include="truckMain.cpp" />
     <ClCompile Include="Vehicle.cpp" />
-    <ClCompile Include="vehicleAndCar.cpp" />
-    <ClCompile Include="vehicleMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Car.h" />
