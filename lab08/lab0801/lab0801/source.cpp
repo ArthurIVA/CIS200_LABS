@@ -1,13 +1,6 @@
 #include <iostream>
 #include <string>
 
-//Structure for Array
-struct node
-{
-	char letter;
-	int occur;
-};
-
 //Structure for Linked List
 struct sortedListNode
 {
@@ -16,12 +9,7 @@ struct sortedListNode
 	sortedListNode * next;
 };
 
-class arrayNode
-{
-public:
-	node * head = NULL;
-};
-
+//Class for Linked List to be passed into functions
 class arraySortedList
 {
 public:
@@ -71,6 +59,9 @@ int main()
 	return 0;
 }
 
+//Description: Take in word and linked list, fill the linked list with the letters in alphabetical order.
+//Pre-Condition: Word should just include lower case letters
+//Post-Condition: Sorted Link LIST!
 void fromString(arraySortedList& list, std::string word)
 {
 	//Declare Movement Nodes
@@ -78,9 +69,9 @@ void fromString(arraySortedList& list, std::string word)
 	sortedListNode * current;
 	sortedListNode * temp;
 
+	//BEGIN Corrected From Class
 	for (int i = 0; i < word.length(); i++)
 	{
-		//Corrected From Class
 		if (list.head == NULL)
 		{
 			temp = new sortedListNode;
@@ -131,8 +122,12 @@ void fromString(arraySortedList& list, std::string word)
 			}
 		}
 	}
+	//END Corrected Code From Class
 }
 
+//Description: Print out linked list
+//Pre-Condition: A filled linked list
+//Post-Condition: A printed linked list
 void printList(arraySortedList & list1)
 {
 	//Declare and Set Current Marker
@@ -156,6 +151,7 @@ void printList(arraySortedList & list1)
 		}
 	}
 
+	//Formatting
 	std::cout << std::endl;
 
 	//Reset Current Marker
@@ -178,5 +174,6 @@ void printList(arraySortedList & list1)
 		}
 	}
 
+	//Formatting
 	std::cout << std::endl;
 }
