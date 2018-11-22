@@ -1,0 +1,17 @@
+Program Starting
+Printed All Integers In Ascending Order
+Printed All Integers In Descending Order
+Printed Even Integers In Ascending Order
+Printed Even Integers In Descending Order
+Began Manually Entering Integers
+Valid Integer Added: 880
+Exited Manual Entry
+Began Manually Entering Integers
+Valid Integer Added: 363
+Exited Manual Entry
+Printed All Integers In Ascending Order
+Began Manually Deleting Integers
+Valid Integer Deleted: 52
+Valid Integer Deleted: 101
+Printed All Integers In Ascending Order
+Program Ending

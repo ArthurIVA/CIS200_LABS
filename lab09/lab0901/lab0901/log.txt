@@ -1,0 +1,6 @@
+Program Starting
+Began Manually Entering Integers
+Tried Invalid Integer: -27
+Exited Manual Entry
+Printed Even Integers In Ascending Order
+Program Ending
