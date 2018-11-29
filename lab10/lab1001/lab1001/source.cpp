@@ -57,11 +57,15 @@ int main()
 	{
 		std::cout << "NO FILE FOUND" << std::endl;
 		output << "NO FILE FOUND" << std::endl;
+		system("pause");
+		return 0;
 	}
 	else if (input.peek() == std::ifstream::traits_type::eof())	//Is It Empty?
 	{
 		std::cout << "File Was Empty" << std::endl;
 		output << "Initial File Was Empty" << std::endl;
+		system("pause");
+		return 0;
 	}
 	else	//FILE HAS STUFF IN IT
 	{
