@@ -1,0 +1,45 @@
+Float Testing
+Value A: 1.34
+Value B: 3.14
+Float Copy Testing
+Value A: 1.34
+Value B: 3.14
+Changing Float Values
+Value A: 6.28
+Value B: 66.666
+Integer Testing
+Value A: 1
+Value B: 3
+Integer Copy Testing
+Value A: 1
+Value B: 3
+Changing Integer Values
+Value A: 777
+Value B: 76
+Character Testing
+Value A: a
+Value B: c
+Character Copy Testing
+Value A: a
+Value B: c
+Changing Character Values
+Value A: f
+Value B: u
+String Testing
+Value A: good
+Value B: morning
+String Copy Testing
+Value A: good
+Value B: morning
+Changing Sring Values
+Value A: great
+Value B: grade
+Date Testing
+Value A: 10/27/2015
+Value B: 12/3/1998
+Date Copy Testing
+Value A: 10/27/2015
+Value B: 12/3/1998
+Changing Date Testing
+Value A: 5/17/2076
+Value B: 1/1/2019
