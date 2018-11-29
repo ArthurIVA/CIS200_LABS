@@ -1,0 +1,4 @@
+Integer Minimum : 1
+Integer Maximum : 13
+Double  Minimum : 1.1
+Double  Maximum : 8.1
