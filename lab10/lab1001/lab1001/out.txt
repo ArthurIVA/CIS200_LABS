@@ -2,3 +2,16 @@ Integer Minimum : 1
 Integer Maximum : 13
 Double  Minimum : 1.1
 Double  Maximum : 8.1
+
+INTEGER STACK 
+1
+2
+3
+4
+13
+DOUBLE STACK
+1.1
+2.3
+4.1
+5.2
+8.1

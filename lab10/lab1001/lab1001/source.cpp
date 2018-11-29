@@ -1,3 +1,8 @@
+//Program Name: TYPENAME TYPENAME TYPENAME
+//Programmer Name: Arthur Aigeltinger IV
+//Description: TYPENAME
+//Date Created: 11/28/2018
+
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -8,7 +13,6 @@ const int N = 5;
 //Define Linked List Node
 struct node
 {
-	
 	double data;
 	node* next;
 };
@@ -96,6 +100,53 @@ int main()
 	output << "Double  Minimum : " << dubMin << std::endl;
 	output << "Double  Maximum : " << dubMax << std::endl;
 
+	//Formatting
+	std::cout << std::endl; 
+	output << std::endl;
+
+	//Print Stack 1 to User and File
+	std::cout << "INTEGER STACK " << std::endl;
+	output << "INTEGER STACK " << std::endl;
+	
+	//Prepare to Print Stack 1
+	node* current;
+	current = list1.head;
+
+	while (current->next != NULL)
+	{
+		//Print
+		std::cout << current->data << std::endl;
+		output << current->data << std::endl;
+		//Move
+		current = current->next;
+	}
+
+	//Print Final
+	std::cout << current->data << std::endl;
+	output << current->data << std::endl;
+
+	//Print Stack 2 to User and File
+	std::cout << "DOUBLE STACK" << std::endl;
+	output << "DOUBLE STACK" << std::endl;
+
+	//Prepare to Print Stack 2
+	current = list2.head;
+
+	while (current->next != NULL)
+	{
+		//Print
+		std::cout << current->data << std::endl;
+		output << current->data << std::endl;
+		//Move
+		current = current->next;
+	}
+
+	//Print Final
+	std::cout << current->data << std::endl;
+	output << current->data << std::endl;
+
+	current = NULL;
+
 	system("pause");
 	return 0;
 }
@@ -139,8 +190,6 @@ If you find this note, please forgive me for not writing this exactly as a stack
 I had come so far before things totally made sense and did not wish to begin anew
 This solution still provides the correct results, amen.
 */
-
-
 
 template<typename T, size_t N>
 void sortLinkedList(T(&inArray)[N], sortedList & list)
