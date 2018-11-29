@@ -36,10 +36,10 @@ Value A: great
 Value B: grade
 Date Testing
 Value A: 10/27/2015
-Value B: 12/3/1998
+Value B: 11/2/2015
 Date Copy Testing
 Value A: 10/27/2015
-Value B: 12/3/1998
+Value B: 11/2/2015
 Changing Date Testing
 Value A: 5/17/2076
-Value B: 1/1/2019
+Value B: 12/3/1998

@@ -1,3 +1,8 @@
+//Program Name: MEGA CONSTRUCTOR 
+//Programmer Name: Arthur Aigeltinger IV
+//Description: Use Template Classes with copy constructors to do STUFF!
+//Date Created:	11/28/2018
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -245,7 +250,7 @@ int main()
 	///DATE-------------------------------------------------------------------------------------
 
 	//Testing Date Constructor
-	B<Date> dateTest({ 10,27,2015 }, { 12,3,1998 });
+	B<Date> dateTest({ 10,27,2015 }, { 11,2,2015 });
 
 	//Console Output
 	std::cout << "Date Testing" << std::endl;
@@ -270,7 +275,7 @@ int main()
 
 	//Testing Changing Values
 	dateTest.setvalueA({ 5,17,2076 });
-	dateTest.setvalueB({ 1,1,2019 });
+	dateTest.setvalueB({ 12,3,1998 });
 
 	//Console Output
 	std::cout << "Changing Date Testing" << std::endl;
